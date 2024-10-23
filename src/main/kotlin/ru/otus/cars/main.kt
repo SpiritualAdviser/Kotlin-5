@@ -1,21 +1,28 @@
 package ru.otus.cars
 
 fun main() {
-    println("\n===> drive cars...")
-    driveCars()
-    println("\n===> inner test...")
-    innerNestedCheck()
-    println("\n===> garage make...")
-    garageMake()
-    println("\n===> model special...")
-    println("\n===> get equipment...")
-    getEquipment()
-    println("\n===> get color...")
-    getColor()
-    println("\n===> tech checks...")
-    techChecks()
-    println("\n===> Taz...")
-    println(Taz.color)
+//    println("\n===> drive cars...")
+//    driveCars()
+//    println("\n===> inner test...")
+//    innerNestedCheck()
+//    println("\n===> garage make...")
+//    garageMake()
+//    println("\n===> model special...")
+//    println("\n===> get equipment...")
+//    getEquipment()
+//    println("\n===> get color...")
+//    getColor()
+//    println("\n===> tech checks...")
+//    techChecks()
+//    println("\n===> Taz...")
+//    println(Taz.color)
+
+    val vaz2107 = Togliatti.buildCar(Vaz2107, Car.Plates("123", 77))
+    val vaz2108 = Togliatti.buildCar(Vaz2108, Car.Plates("123", 77))
+    val vazTaz = Togliatti.buildCar(Vaz2107, Car.Plates("123", 77))
+
+   println(vaz2107.carOutput.getAmountFuel())
+
 }
 
 fun driveCars() {
@@ -87,7 +94,7 @@ fun repairEngine(car: VazPlatform) {
     // В зависимости от типа двигателя выполняем разные действия
     // when обеспечивает обход всех вариантов перечисления
     when (car.engine) {
-        is VazEngine.LADA_2107 -> println("Чистка карбюратора у двигателя объемом ${car.engine.volume} куб.см у машины $car")
-        is VazEngine.SAMARA_2108 -> println("Угол зажигания у двигателя объемом ${car.engine.volume} куб.см у машины $car")
+        is VazEngine.LADA_2107->println("Чистка карбюратора у двигателя объемом ${car.engine.volume} куб.см у машины $car")
+        is VazEngine.SAMARA_2108->println("Угол зажигания у двигателя объемом ${car.engine.volume} куб.см у машины $car")
     }
 }

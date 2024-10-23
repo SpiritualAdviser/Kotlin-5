@@ -4,6 +4,9 @@ package ru.otus.cars
  * Машина целиком
  */
 interface Car : CarInput {
+
+    var fuelSystem: FuelSystem
+
     /**
      * Номерной знак
      */

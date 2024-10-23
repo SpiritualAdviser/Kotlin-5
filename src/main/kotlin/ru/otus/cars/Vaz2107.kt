@@ -12,14 +12,15 @@ class Vaz2107 private constructor(color: String) : VazPlatform(color) {
     companion object : CarBuilder {
         private fun getRandomEngine(): VazEngine {
             return when (Random.nextInt(0, 2)) {
-                0 -> VazEngine.LADA_2107(1300)
-                else -> VazEngine.LADA_2107(1600)
+                0->VazEngine.LADA_2107(1300)
+                else->VazEngine.LADA_2107(1600)
             }
         }
 
         override fun build(plates: Car.Plates): Vaz2107 = Vaz2107("Зеленый").apply {
             this.engine = getRandomEngine()
             this.plates = plates
+            this.fuelSystem = FuelSystem()
         }
 
         /**
@@ -39,6 +40,8 @@ class Vaz2107 private constructor(color: String) : VazPlatform(color) {
     // Переопределяем свойство родителя
     override lateinit var engine: VazEngine
         private set
+    override lateinit var fuelSystem: FuelSystem
+
 
     /**
      * Семерка едет так
@@ -73,6 +76,10 @@ class Vaz2107 private constructor(color: String) : VazPlatform(color) {
     inner class VazOutput : CarOutput {
         override fun getCurrentSpeed(): Int {
             return this@Vaz2107.currentSpeed
+        }
+
+        override fun getAmountFuel(): String {
+            return this@Vaz2107.fuelSystem.getAmountFuel()
         }
     }
 }

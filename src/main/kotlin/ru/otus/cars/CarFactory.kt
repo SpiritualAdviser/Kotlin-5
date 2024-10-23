@@ -14,6 +14,7 @@ interface CarFactory {
  * Автозавод в Тольятти (он у нас один такой)
  */
 object Togliatti : CarFactory {
+
     private fun buildVaz2107(plates: Car.Plates): Car {
         println("Запил ${Vaz2107.MODEL} в Тольятти...")
         val vaz = Vaz2107.build(plates)
