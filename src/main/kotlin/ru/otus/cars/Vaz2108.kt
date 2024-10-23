@@ -82,7 +82,7 @@ class Vaz2108 private constructor(color: String) : VazPlatform(color) {
         }
 
         override fun getAmountFuel(): String {
-            TODO("Not yet implemented")
+            return this@Vaz2108.fuelSystem.getAmountFuel()
         }
     }
 }
