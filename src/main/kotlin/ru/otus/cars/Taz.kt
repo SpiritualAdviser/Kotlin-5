@@ -1,7 +1,8 @@
 package ru.otus.cars
 
 object Taz: Car {
-    override var fuelSystem: FuelSystem
+
+    override var tankMouth: TankMouth
         get() = TODO("Not yet implemented")
         set(value) {}
 

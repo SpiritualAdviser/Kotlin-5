@@ -38,7 +38,9 @@ class Vaz2108 private constructor(color: String) : VazPlatform(color) {
     override lateinit var engine: VazEngine
         private set
 
-    override lateinit var fuelSystem: FuelSystem
+    override var tankMouth: TankMouth
+        get() = TODO("Not yet implemented")
+        set(value) {}
 
     /**
      * Восьмерка едет так
@@ -81,8 +83,9 @@ class Vaz2108 private constructor(color: String) : VazPlatform(color) {
             return this@Vaz2108.currentSpeed
         }
 
-        override fun getAmountFuel(): String {
-            return this@Vaz2108.fuelSystem.getAmountFuel()
+        override fun getFuelContents(): Int {
+            TODO("Not yet implemented")
         }
+
     }
 }

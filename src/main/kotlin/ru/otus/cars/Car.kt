@@ -5,7 +5,7 @@ package ru.otus.cars
  */
 interface Car : CarInput {
 
-    var fuelSystem: FuelSystem
+    var tankMouth: TankMouth
 
     /**
      * Номерной знак
