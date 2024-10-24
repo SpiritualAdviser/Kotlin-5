@@ -2,7 +2,13 @@ package ru.otus.cars
 
 interface Tank {
 
-    fun getContents(): Int
-    fun receiveFuel(liters: Int)
+    var amountFuel: Int
 
+    fun getContents(): String {
+        return amountFuel.toString()
+    }
+
+    fun receiveFuel(liters: Int) {
+        amountFuel += liters
+    }
 }

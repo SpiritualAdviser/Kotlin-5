@@ -9,5 +9,5 @@ interface CarOutput {
      */
     fun getCurrentSpeed(): Int
 
-    fun getFuelContents(): Int
+    fun getFuelContents(): String
 }

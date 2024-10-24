@@ -1,14 +1,30 @@
 package ru.otus.cars
 
-abstract class TankMouth {
+abstract class TankMouth : Tank {
+    abstract var mouthType: String
 
-    fun open() {
-        println("open")
+    class PetrolMouth : TankMouth(), Tank {
+        override var mouthType: String = "PetrolMouth";
+        override var amountFuel: Int = 0
     }
 
-    fun close() {
-        println("close")
+    class LpgMouth : TankMouth(), Tank {
+        override var mouthType: String = "LpgMouth"
+        override var amountFuel: Int = 0
     }
+
+    fun open(liters: Int, typeOfFuel: String) {
+
+        if (mouthType === typeOfFuel) {
+            this.receiveFuel(liters = liters)
+
+        } else {
+            throw IllegalArgumentException("wrong type of fuel")
+        }
+
+    }
+
+    fun close() {}
 }
 
 

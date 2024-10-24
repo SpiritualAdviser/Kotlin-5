@@ -1,10 +1,7 @@
 package ru.otus.cars
 
-object Taz: Car {
-
-    override var tankMouth: TankMouth
-        get() = TODO("Not yet implemented")
-        set(value) {}
+object Taz : Car {
+    override var tankMouth: TankMouth = throw IllegalArgumentException("blow")
 
     /**
      * Номерной знак
