@@ -22,15 +22,17 @@ fun main() {
     val vaz2108V122 = Togliatti.buildCar(Vaz2108, Car.Plates("122", 78))
 
     val cars = mapOf(
-        vaz2107 to 5,
-        vaz2108 to 7,
-        vaz2108V122 to 9,
+        vaz2107 to 5, vaz2108 to 7, vaz2108V122 to 9, Taz to 8
     )
 
     val gasStation = GasStation()
 
     cars.forEach() {
-        println("car goes to gas station ${it.key.plates} has fuel ${it.key.carOutput.getFuelContents()}")
+        if (it.key == Taz) {
+            println("Taz 0")
+        } else {
+            println("car goes to gas station ${it.key.plates} has fuel ${it.key.carOutput.getFuelContents()}")
+        }
     }
 
     cars.forEach() {
@@ -38,7 +40,11 @@ fun main() {
     }
 
     cars.forEach() {
-        println("car after gas station ${it.key.plates} has fuel ${it.key.carOutput.getFuelContents()}")
+        if (it.key == Taz) {
+            println("Taz 0")
+        } else {
+            println("car after gas station ${it.key.plates} has fuel ${it.key.carOutput.getFuelContents()}")
+        }
     }
 }
 
@@ -78,8 +84,7 @@ fun garageMake() {
 
 fun getEquipment() {
     val cars = listOf(
-        Vaz2107.build(Car.Plates("123", 77)),
-        Vaz2108.build(Car.Plates("321", 78))
+        Vaz2107.build(Car.Plates("123", 77)), Vaz2108.build(Car.Plates("321", 78))
     )
 
     cars.forEach { car ->
@@ -89,8 +94,7 @@ fun getEquipment() {
 
 fun getColor() {
     val cars = listOf(
-        Vaz2107.build(Car.Plates("123", 77)),
-        Vaz2108.build(Car.Plates("321", 78))
+        Vaz2107.build(Car.Plates("123", 77)), Vaz2108.build(Car.Plates("321", 78))
     )
 
     cars.forEach { car ->
