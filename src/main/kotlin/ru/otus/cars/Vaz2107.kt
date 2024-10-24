@@ -1,5 +1,6 @@
 package ru.otus.cars
 
+import ru.otus.cars.Vaz2107.Companion.build
 import kotlin.random.Random
 
 /**
@@ -42,7 +43,6 @@ class Vaz2107 private constructor(color: String) : VazPlatform(color) {
     override lateinit var engine: VazEngine
         private set
 
-    override lateinit var tankMouth: TankMouth
 
     /**
      * Семерка едет так
@@ -60,6 +60,12 @@ class Vaz2107 private constructor(color: String) : VazPlatform(color) {
      */
     override lateinit var plates: Car.Plates
         private set
+
+    /**
+     * Доступно сборщику
+     * @see [build]
+     */
+    override lateinit var tankMouth: TankMouth
 
 
     // Выводим состояние машины
