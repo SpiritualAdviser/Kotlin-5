@@ -1,7 +1,9 @@
 package ru.otus.cars
 
 object Taz : Car {
-    override var tankMouth: TankMouth = throw IllegalArgumentException("blow")
+    override var tankMouth: TankMouth
+        get() = throw IllegalArgumentException("blow")
+        set(value) {}
 
     /**
      * Номерной знак

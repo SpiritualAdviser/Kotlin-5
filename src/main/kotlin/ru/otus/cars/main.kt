@@ -19,14 +19,27 @@ fun main() {
 
     val vaz2107 = Togliatti.buildCar(Vaz2107, Car.Plates("123", 77))
     val vaz2108 = Togliatti.buildCar(Vaz2108, Car.Plates("125", 78))
+    val vaz2108V122 = Togliatti.buildCar(Vaz2108, Car.Plates("122", 78))
 
-    vaz2107.tankMouth.open(5, "PetrolMouth")
-    vaz2108.tankMouth.open(10, "LpgMouth")
+    val cars = mapOf(
+        vaz2107 to 5,
+        vaz2108 to 7,
+        vaz2108V122 to 9,
+    )
 
-    println(vaz2107.carOutput.getFuelContents())
-    println(vaz2108.carOutput.getFuelContents())
+    val gasStation = GasStation()
 
-    Taz.tankMouth.open(7,"PetrolMouth")
+    cars.forEach() {
+        println("car goes to gas station ${it.key.plates} has fuel ${it.key.carOutput.getFuelContents()}")
+    }
+
+    cars.forEach() {
+        gasStation.addFuel(it.key, it.value)
+    }
+
+    cars.forEach() {
+        println("car after gas station ${it.key.plates} has fuel ${it.key.carOutput.getFuelContents()}")
+    }
 }
 
 fun driveCars() {

@@ -1,7 +1,6 @@
 package ru.otus.cars
 
 interface Tank {
-
     var amountFuel: Int
 
     fun getContents(): String {
